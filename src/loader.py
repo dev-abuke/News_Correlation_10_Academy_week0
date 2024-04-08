@@ -34,51 +34,39 @@ class NewsDataLoader:
         path: path to the slack exported data folder
         '''
         self.path = path
-        self.channels = self.get_channels()
-        self.users = self.get_users()
+        self.news = self.get_news()
+        self.traffic = self.get_traffic()
+        self.domain_location = self.get_domain_location()
     
 
-    def get_users(self):
+    def get_news(self):
         '''
-        write a function to get all the users from the json file
+        write a function to get all the news from the csv file
         '''
-        with open(os.path.join(self.path, 'users.json'), 'r') as f:
-            users = json.load(f)
-
-        return users
-    
-    def get_channels(self):
-        '''
-        write a function to get all the channels from the json file
-        '''
-        with open(os.path.join(self.path, 'channels.json'), 'r') as f:
-            channels = json.load(f)
-
-        return channels
-
-    def get_channel_messages(self, channel_name):
-        '''
-        write a function to get all the messages from a channel
+        news = os.path.join(self.path, 'rating.csv')
         
+        return news
+    
+    def get_traffic(self):
         '''
+        write a function to get all the traffic from the csv file
+        '''
+        traffic = os.path.join(self.path, 'traffic.csv')
 
-    # 
-    def get_user_map(self):
+        return traffic  
+      
+    def get_domain_location(self):
         '''
-        write a function to get a map between user id and user name
+        write a function to get all the domain_location from the csv file
         '''
-        userNamesById = {}
-        userIdsByName = {}
-        for user in self.users:
-            userNamesById[user['id']] = user['name']
-            userIdsByName[user['name']] = user['id']
-        return userNamesById, userIdsByName        
+        domain_location = os.path.join(self.path, 'domains_location.csv')
 
+        return domain_location
 
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Export Slack history')
+    parser = argparse.ArgumentParser(description='Export News history')
 
     
     parser.add_argument('--zip', help="Name of a zip file to import")
