@@ -1,6 +1,7 @@
 import os
 import sys
 import glob
+import re
 import json
 import datetime
 from collections import Counter
@@ -12,7 +13,7 @@ import seaborn as sns
 from nltk.corpus import stopwords
 
 
-def break_combined_urls(urls):
+def get_domain(df):
     """
     Breaks combined url to only the domain path.
     
@@ -22,9 +23,9 @@ def break_combined_urls(urls):
     Returns:
         tuple of lists of weeks to be treated as plus one and minus one
     """
-    for url in urls:
-        split = str.split(url, sep='/')
-        print(split[2])
+    return df['url'].map(
+        lambda x: re.sub(r'^www.', '', re.sub(r'^https?://', '', x.split('/')[2]))
+    )
     
 
 def get_msgs_df_info(df):

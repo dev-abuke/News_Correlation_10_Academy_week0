@@ -191,6 +191,7 @@ countriesarr = [
 {'timezones': ['Africa/Mbabane'], 'code': 'SZ', 'continent': 'Africa', 'name': 'Swaziland', 'capital': 'Mbabane'},
 {'timezones': ['Europe/Zurich'], 'code': 'CH', 'continent': 'Europe', 'name': 'Switzerland', 'capital': 'Bern'},
 {'timezones': ['Asia/Dubai'], 'code': 'AE', 'continent': 'Asia', 'name': 'United Arab Emirates', 'capital': 'Abu Dhabi'},
+{'timezones': ['Asia/Dubai'], 'code': 'AE', 'continent': 'America', 'name': 'America', 'capital': 'Abu Dhabi'},
 {'timezones': ['Europe/London'], 'code': 'GB', 'continent': 'Europe', 'name': 'United Kingdom', 'capital': 'London'},
 {'timezones': ['Europe/London'], 'code': 'GB', 'continent': 'China', 'name': 'China', 'capital': 'London'},
 ]
