@@ -12,9 +12,9 @@ import seaborn as sns
 from nltk.corpus import stopwords
 
 
-def break_combined_urls(combined_weeks):
+def break_combined_urls(urls):
     """
-    Breaks combined url to oly the domain path.
+    Breaks combined url to only the domain path.
     
     Args:
         combined_weeks: list of tuples of weeks to combine
@@ -22,18 +22,10 @@ def break_combined_urls(combined_weeks):
     Returns:
         tuple of lists of weeks to be treated as plus one and minus one
     """
-    plus_one_week = []
-    minus_one_week = []
-
-    for week in combined_weeks:
-        if week[0] < week[1]:
-            plus_one_week.append(week[0])
-            minus_one_week.append(week[1])
-        else:
-            minus_one_week.append(week[0])
-            plus_one_week.append(week[1])
-
-    return plus_one_week, minus_one_week
+    for url in urls:
+        split = str.split(url, sep='/')
+        print(split[2])
+    
 
 def get_msgs_df_info(df):
     msgs_count_dict = df.user.value_counts().to_dict()
