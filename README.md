@@ -15,18 +15,6 @@ This project focuses on leveraging Git and GitHub for version control, setting u
     - [Commits](#commits)
     - [Code Organization](#code-organization)
     - [Notebooks](#notebooks)
-        - [Day 1 Analysis](#day-1-analysis)
-    - [Analysis Results](#analysis-results)
-        - [Top and Bottom 10 Users](#top-and-bottom-users)
-            - [By Reply Count](#Reply-Count)
-            - [By Mention Count](#Mention-Count)
-            - [By Message Count](#Message-Count)
-        - [Top 10 Messages](#top-messages)
-            - [By Reply Count](#Replies)
-            - [By Mention Count](#Reactions)
-            - [By Message Count](#Mentions)
-        - [Channel Analysis](#channel-analysis)
-        - [Time Analysis](#time-analysis)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -112,39 +100,40 @@ Restructured the code by moving functions into `/src/loader.py` and `/src/utils.
 #### Reply Count
 - Websites that have the largest count of news articles.
   - ***Top and Bottom 10 Websites - Article Count***
-   ![Alt text](screenshots/top10newsarticles.png)
-#### Mention Count
+  ![Alt text](screenshots/top10newsarticles.png)
+#### Global Rank
 - Websites with the highest numbers of visitors traffic.
   - ***Top and Bottom 10 Websites - Global Rank***
-    ![Alt text](screenshots/globalrank_bysource.png)
-#### Message Count
+  ![Alt text](screenshots/globalrank_bysource.png)
+#### Media Count By Country
 - Countries with the highest number of news media organisations.
   - ***Top and Bottom 10 Websites - Media Count By Country***
-    ![Alt text](screenshots/highestnumberofmediabycountry.png)
-#### Message Count
+  ![Alt text](screenshots/highestnumberofmediabycountry.png)
+#### Article By Country
 - Countries that have many articles written about them.
   - ***Top and Bottom 10 Websites - Article By Country***
-    ![Alt text](screenshots/top10botom10countrymentions.png)
-#### Message Count
+![Alt text](screenshots/top10botom10countrymentions.png)
+    
+#### Article By Continent
 - Websites that reported (the news content) about Africa, US, China, EU, Russia, Ukraine, Middle East.
   - ***Top and Bottom 10 Websites - Africa***
-    ![Alt text](screenshots/africa.png)
+  ![Alt text](screenshots/africa.png)
   - ***Top and Bottom 10 Websites - Europe***
-    ![Alt text](screenshots/europe.png)
+  ![Alt text](screenshots/europe.png)
   - ***Top and Bottom 10 Websites - China***
-    ![Alt text](screenshots/china.png)
+  ![Alt text](screenshots/china.png)
   - ***Top and Bottom 10 Websites - Asia***
-    ![Alt text](screenshots/asia.png)
+  ![Alt text](screenshots/asia.png)
   - ***Top and Bottom 10 Websites - USA***
-    ![Alt text](screenshots/USA.png)
-#### Reaction Count
+  ![Alt text](screenshots/USA.png)
+#### Sentiment Analysis
 - Websites with the highest count of positive, neutral, and negative sentiment.
   - ***Top and Bottom 10 Websites - Positive***
-    ![Alt text](screenshots/positive_sentiment.png)
+  ![Alt text](screenshots/positive_sentiment.png)
   - ***Top and Bottom 10 Websites - Negative***
-    ![Alt text](screenshots/negative_sentiment.png)
+  ![Alt text](screenshots/negative_sentiment.png)
   - ***Top and Bottom 10 Websites - Neutral***
-    ![Alt text](screenshots/neutral_sentiment.png)
+  ![Alt text](screenshots/neutral_sentiment.png)
 
 ### Top 
 
