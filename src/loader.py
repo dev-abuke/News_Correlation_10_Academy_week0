@@ -53,7 +53,7 @@ class NewsDataLoader:
         '''
         traffic = os.path.join(self.path, 'traffic.csv')
         
-        return pd.read_csv(traffic) 
+        return traffic
       
     def get_domain_location(self):
         '''
