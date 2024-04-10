@@ -1,79 +1,41 @@
-
-# Network Analysis Python Package
+# Welcome to Week-0 Task-1 of 10 Academy's intensive training program!
 
 ## Overview
 
-This Python package, `network_analysis`, is designed for conducting network analysis task. It provides tools and utilities to analyze network data, with a focus on handling Slack messages from a previous 10 Academy training program.
-
-## What to do
-
-Several code snippets have been provided to serve as a starting point for your project. However, it's essential to note that the code has not undergone thorough testing, and errors are expected. Your task is to identify and rectify errors, remove unnecessary components, and incorporate any missing elements.
-
-Consider this initial code as a foundation for your solution, but do not rely on it in its current state. It's provided to give you a starting point, but you should be prepared to modify and enhance it to meet the specific requirements of your system.
-
-As you commence your work, focus on exploring the dataset to gain a deep understanding of its structure and contents. Attempt to answer various intriguing questions that arise during your exploration.
-
-For guidance on the specific questions to address, refer to the notebooks/parse_slack_data.ipynb notebook, where you'll find empty cells designed for your responses. Utilize these cells to document your findings, insights, and any challenges encountered.
-
-Remember, this is an iterative process, and refining your code and analyses is a crucial part of the learning experience. Regularly post question on slack, and don't hesitate to reach out to tutors if you encounter difficulties. Best of luck with your exploration and analysis!
+This project focuses on leveraging Git and GitHub for version control, setting up a Python environment, implementing continuous integration and continuous deployment (CI/CD), and employing key performance indicators (KPIs) related to development environment setup and relevant skills. The project also involves utilizing the CRISP-DM framework for project planning and conducting exploratory data analysis (EDA) and statistical thinking.
 
 ## Table of Contents
 
-- [Installation](#installation)
-  - [Creating a Virtual Environment](#virtual-env)
-  - [Clone this package](#clone)
-- [Usage](#usage)
-  - [Configuration](#configuration)
-  - [Data Loading](#data-loading)
-  - [Utilities](#utilities)
-- [Testing](#testing)
-- [Documentation](#documentation)
-- [Notebooks](#notebooks)
-- [Contributing](#contributing)
-- [License](#license)
+- [Project Title](#Welcome-to-Week-0-Task-1-of-10-Academy's-intensive-training-program!)
+  - [Overview](#overview)
+  - [Goals to Achieve](#goals-to-achieve)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Branches](#branches)
+    - [Commits](#commits)
+    - [Code Organization](#code-organization)
+    - [Notebooks](#notebooks)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+## Goals to Achieve
+
+- **Dev Environment Setup:** Successfully set up the Python environment, Git version control, and CI/CD.
+- **Relevant Skills Demonstration:** Showcase proficiency in the CRISP-DM framework, data understanding, EDA techniques, and statistical thinking.
+- **Project Planning - EDA & Stats:** Effectively plan and execute the project using the CRISP-DM framework, perform EDA, and derive actionable insights from statistical analyses.
 
 ## Installation
 
-### Creating a Virtual Environment
+To get started with the project, follow these installation steps:
 
-#### Using Conda
-
-If you prefer Conda as your package manager:
-
-1. Open your terminal or command prompt.
-
-2. Navigate to your project directory.
-
-3. Run the following command to create a new Conda environment:
-
-    ```bash
-    conda create --name your_env_name python=3.12
-    ```
-    Replace `your_env_name` with the desired name for your environment e.g. week0 and `3.12` with your preferred Python version.
-
-4. Activate the environment:
-
-    ```bash
-    conda activate your_env_name
-    ```
-
-#### Using Virtualenv
-
-If you prefer using `venv`, Python's built-in virtual environment module:
-
-1. Open your terminal or command prompt.
-
-2. Navigate to your project directory.
-
-3. Run the following command to create a new virtual environment:
-
+1. **Python Environment:**
     ```bash
     python -m venv your_env_name
     ```
 
     Replace `your_env_name` with the desired name for your environment.
-
-4. Activate the environment:
+    
+    **Activate the environment:**
 
     - On Windows:
 
@@ -87,93 +49,106 @@ If you prefer using `venv`, Python's built-in virtual environment module:
     source your_env_name/bin/activate
     ```
 
-Now, your virtual environment is created and activated. You can install packages and run your Python scripts within this isolated environment. Don't forget to install required packages using `pip` or `conda` once the environment is activated.
+2. **Clone this package**
+    To install the `network_analysis` package, follow these steps:
 
-### Clone this package
+    1. Clone the repository:
+        ```bash
+        git clone https://github.com/dev-abuke/News_Correlation_10_Academy_week0.git
+        ```
+    2. Navigate to the project directory:
+        ```bash
+        cd News_Correlation_10_Academy_week0
+        ```
+    
+    3. Install the required dependencies:
+        ```bash
+        pip install -r requirements.txt
+        ```
 
-To install the `network_analysis` package, follow these steps:
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/network_analysis.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd network_analysis
-    ```
- 
-3. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-Please be aware that the existing requirements.txt file includes only a limited set of packages at the moment, and it might not encompass all the necessary packages for your analysis. Make sure to supplement it with any additional packages you plan to install.
+3. **Continuous Integration:**
+    - CI/CD configurations are already set up. Refer to the CI/CD documentation for additional details.
 
 ## Usage
-### Configuration
-Configure the package by modifying the `src/config.py` file. Adjust parameters such as file paths, API keys, or any other configuration settings relevant to your use case.
 
-### Data Loading
-The package provides a data loader module (`loader.py`) in the src directory. Use this module to load your network data into a format suitable for analysis.
+### Branches
 
-Example:
+In this repository, the branches are organized as follows:
 
-```python
-from src.loader import DataLoader
+- **main:** The main branch, initially forked from [https://github.com/10xac/week0_starter_network_analysis](https://github.com/10xac/week0_starter_network_analysis).
 
-# Initialize DataLoader
-data_loader = DataLoader()
+- **task-1:** The current branch for Day 1 analysis. 
 
-# Load data from a Slack channel
-slack_data = data_loader.load_slack_data("path/to/slack_channel_data")
-```
+  ```bash
+  git checkout -b task-1
+    ```
 
-## Utilities
-Explore the various utilities available in the `src/utils.py` module. This module contains functions for common tasks such as data cleaning, preprocessing, and analysis.
 
-Example:
+### Code Organization
 
-```python
-from src.utils import clean_data, visualize_network
-
-# Clean the loaded data
-cleaned_data = clean_data(slack_data)
-
-# Visualize the network
-visualize_network(cleaned_data)
-```
-
-## Testing
-Run tests using the following command:
-
-```bash
-make test
-```
-
-This will execute the unit tests located in the tests directory.
-
-## Documentation
-Visit the docs directory for additional documentation and resources. The documentation covers important aspects such as code structure, best practices, and additional usage examples.
+Restructured the code by moving functions into `/src/loader.py` and `/src/utils.py`. In the analysis notebooks, used the `loader` from `/src/loader.py` and functions from `/src/utils.py` for data loading needs and helper functions.
 
 ## Notebooks
-The notebooks directory contains Jupyter notebooks that demonstrate specific use cases and analyses. Refer to these notebooks for hands-on examples.
+### Day 1 Analysis
+`/notebooks/NewsEDA.ipynb`
+
+## Analysis Results
+
+### Top and Bottom Users
+
+#### Article Count
+- Websites that have the largest count of news articles.
+***Top and Bottom 10 Websites - Article Count***
+  ![Alt text](screenshots/top10newsarticles.png)
+#### Global Rank
+- Websites with the highest numbers of visitors traffic.
+***Top and Bottom 10 Websites - Global Rank***
+  ![Alt text](screenshots/globalrank_bysource.png)
+#### Media Count By Country
+- Countries with the highest number of news media organisations.
+***Top and Bottom 10 Websites - Media Count By Country***
+  ![Alt text](screenshots/highestnumberofmediabycountry.png)
+#### Article By Country
+- Countries that have many articles written about them.
+***Top and Bottom 10 Websites - Article By Country***
+![Alt text](screenshots/top10botom10countrymentions.png)
+    
+#### Article By Continent
+- Websites that reported (the news content) about Africa, US, China, EU, Russia, Ukraine, Middle East.
+  - ***Top and Bottom 10 Websites - Africa***
+  ![Alt text](screenshots/africa.png)
+  - ***Top and Bottom 10 Websites - Europe***
+  ![Alt text](screenshots/europe.png)
+  - ***Top and Bottom 10 Websites - China***
+  ![Alt text](screenshots/china.png)
+  - ***Top and Bottom 10 Websites - Asia***
+  ![Alt text](screenshots/asia.png)
+  - ***Top and Bottom 10 Websites - USA***
+  ![Alt text](screenshots/USA.png)
+#### Sentiment Analysis
+- Websites with the highest count of positive, neutral, and negative sentiment.
+  ***Top and Bottom 10 Websites - Positive***
+  - ![Alt text](screenshots/positive_sentiment.png)
+  ***Top and Bottom 10 Websites - Negative***
+  -![Alt text](screenshots/negative_sentiment.png)
+  ***Top and Bottom 10 Websites - Neutral***
+  -![Alt text](screenshots/neutral_sentiment.png)
+
+### Top 
+
+- How similar are the number of words in the title  across sites
+  - ***Top 10 Websites (Source) - Title Length***
+  *Title Length Distribution*
+  ![Alt text](screenshots/title_length_distribution.png)
+
+- The impact of frequent news reporting and sentiment to the website’s global ranking.
+  - ***The impact of frequent news reporting***
+    - *Scatter plot*
+    ![Alt text](screenshots/2dscatterplot.png)
 
 ## Contributing
 Contributions are welcome! Before contributing, please review our contribution guidelines.
 
 ##  License
 This project is licensed under the MIT License.
-
-## Network Analysis
-
-This is a starter python package to analze the slack data to learn about
-
-* Patter of users messaging behaviour
-* Patter of replies and reactions of users to messages posted both by peers and admins
-* Discover sub-communities by building network graphs of message senders and those who reply or react to those messages
-
-
-
-
-
-
