@@ -11,6 +11,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 from nltk.corpus import stopwords
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 
 def get_domain(df):
@@ -28,14 +29,10 @@ def get_domain(df):
     )
     
 
-def get_msgs_df_info(df):
-    msgs_count_dict = df.user.value_counts().to_dict()
-    replies_count_dict = dict(Counter([u for r in df.replies if r != None for u in r]))
-    mentions_count_dict = dict(Counter([u for m in df.mentions if m != None for u in m]))
-    links_count_dict = df.groupby("user").link_count.sum().to_dict()
-    return msgs_count_dict, replies_count_dict, mentions_count_dict, links_count_dict
-
-
+analyzer = SentimentIntensityAnalyzer()
+def get_sentiment_score(text):
+    text_str = str(text)  # convert to a string
+    return analyzer.polarity_scores(text_str)['compound']
 
 def get_messages_dict(msgs):
     msg_list = {
