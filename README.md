@@ -97,21 +97,21 @@ Restructured the code by moving functions into `/src/loader.py` and `/src/utils.
 
 ### Top and Bottom Users
 
-#### Reply Count
+#### Article Count
 - Websites that have the largest count of news articles.
-  - ***Top and Bottom 10 Websites - Article Count***
+***Top and Bottom 10 Websites - Article Count***
   ![Alt text](screenshots/top10newsarticles.png)
 #### Global Rank
 - Websites with the highest numbers of visitors traffic.
-  - ***Top and Bottom 10 Websites - Global Rank***
+***Top and Bottom 10 Websites - Global Rank***
   ![Alt text](screenshots/globalrank_bysource.png)
 #### Media Count By Country
 - Countries with the highest number of news media organisations.
-  - ***Top and Bottom 10 Websites - Media Count By Country***
+***Top and Bottom 10 Websites - Media Count By Country***
   ![Alt text](screenshots/highestnumberofmediabycountry.png)
 #### Article By Country
 - Countries that have many articles written about them.
-  - ***Top and Bottom 10 Websites - Article By Country***
+***Top and Bottom 10 Websites - Article By Country***
 ![Alt text](screenshots/top10botom10countrymentions.png)
     
 #### Article By Continent
@@ -128,12 +128,12 @@ Restructured the code by moving functions into `/src/loader.py` and `/src/utils.
   ![Alt text](screenshots/USA.png)
 #### Sentiment Analysis
 - Websites with the highest count of positive, neutral, and negative sentiment.
-  - ***Top and Bottom 10 Websites - Positive***
-  ![Alt text](screenshots/positive_sentiment.png)
-  - ***Top and Bottom 10 Websites - Negative***
-  ![Alt text](screenshots/negative_sentiment.png)
-  - ***Top and Bottom 10 Websites - Neutral***
-  ![Alt text](screenshots/neutral_sentiment.png)
+  ***Top and Bottom 10 Websites - Positive***
+  - ![Alt text](screenshots/positive_sentiment.png)
+  ***Top and Bottom 10 Websites - Negative***
+  -![Alt text](screenshots/negative_sentiment.png)
+  ***Top and Bottom 10 Websites - Neutral***
+  -![Alt text](screenshots/neutral_sentiment.png)
 
 ### Top 
 
@@ -143,7 +143,7 @@ Restructured the code by moving functions into `/src/loader.py` and `/src/utils.
   ![Alt text](screenshots/title_length_distribution.png)
 
 - The impact of frequent news reporting and sentiment to the website’s global ranking.
-  - ***Top 10 Messages - Reactions***
+  - ***The impact of frequent news reporting***
     - *Scatter plot*
     ![Alt text](screenshots/2dscatterplot.png)
 
