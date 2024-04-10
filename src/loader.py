@@ -8,7 +8,7 @@ import csv
 from datetime import datetime
 from pick import pick
 from time import sleep
-
+import pandas as pd
 
 
 # Create wrapper classes for using slack_sdk in place of slacker
@@ -52,8 +52,8 @@ class NewsDataLoader:
         write a function to get all the traffic from the csv file
         '''
         traffic = os.path.join(self.path, 'traffic.csv')
-
-        return traffic  
+        
+        return pd.read_csv(traffic) 
       
     def get_domain_location(self):
         '''
