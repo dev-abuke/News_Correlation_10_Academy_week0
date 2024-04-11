@@ -37,17 +37,17 @@ def clean_text(text):
     text = re.sub(r'[^a-zA-Z\s]', '', text)
     
     # Tokenization using NLTK
-    #tokens = word_tokenize(text)
+    tokens = word_tokenize(text)
     
     # Remove stopwords
-    #stop_words = set(stopwords.words('english'))
-    #tokens = [word for word in tokens if word not in stop_words]
+    stop_words = set(stopwords.words('english'))
+    tokens = [word for word in tokens if word not in stop_words]
     
     # Stemming using NLTK PorterStemmer
-    #stemmer = PorterStemmer()
-    #tokens = [stemmer.stem(word) for word in tokens]
+    stemmer = PorterStemmer()
+    tokens = [stemmer.stem(word) for word in tokens]
     
     # Join tokens back into a single string
-    #cleaned_text = ' '.join(tokens)
+    cleaned_text = ' '.join(tokens)
     
-    return text
+    return cleaned_text
