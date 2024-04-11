@@ -13,15 +13,15 @@ class TestLoader(unittest.TestCase):
 
     def test_get_news(self):
         expected_path = os.path.join('data', 'rating.csv')
-        self.assertEqual(self.loader.get_news(), expected_path)
+        self.assertEqual(self.loader.get_news_path(), expected_path)
 
     def test_get_traffic(self):
         expected_path = os.path.join('data', 'traffic.csv')
-        self.assertEqual(self.loader.get_traffic(), expected_path)
+        self.assertEqual(self.loader.get_traffic_path(), expected_path)
 
     def test_get_domain_location(self):
         expected_path = os.path.join('data', 'domains_location.csv')
-        self.assertEqual(self.loader.get_domain_location(), expected_path)
+        self.assertEqual(self.loader.get_domain_location_path(), expected_path)
 
 if __name__ == '__main__':
     unittest.main()
