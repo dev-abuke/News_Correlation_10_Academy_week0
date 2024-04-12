@@ -2,7 +2,10 @@
 
 ## Overview
 
-This project focuses on leveraging Git and GitHub for version control, setting up a Python environment, implementing continuous integration and continuous deployment (CI/CD), and employing key performance indicators (KPIs) related to development environment setup and relevant skills. The project also involves utilizing the CRISP-DM framework for project planning and conducting exploratory data analysis (EDA) and statistical thinking.
+Data Science and ML Engineering, featuring MLOps, analysis pipelines, and frontend-backend integration. Classification, feature stores, and more. Software Engineering and MLOps concepts while building ML models with React and Tailwind CSS on the frontend, and Flask on the backend. Contribute to this dynamic blend of technologies—happy coding!
+
+## Table of Contents
+
 
 ## Table of Contents
 
@@ -32,9 +35,11 @@ This project focuses on leveraging Git and GitHub for version control, setting u
 
 ## Goals to Achieve
 
-- **Dev Environment Setup:** Successfully set up the Python environment, Git version control, and CI/CD.
-- **Relevant Skills Demonstration:** Showcase proficiency in the CRISP-DM framework, data understanding, EDA techniques, and statistical thinking.
-- **Project Planning - EDA & Stats:** Effectively plan and execute the project using the CRISP-DM framework, perform EDA, and derive actionable insights from statistical analyses.
+- **MLOps & Pipelines:** Explore MLOps components, analysis pipelines for efficient data processing.
+- **Data Science Skills:** Article classification, and statistical thinking.
+- **ML Engineering Proficiency:** Implement feature stores, model versioning, monitoring, CI, and package building.
+- **ML Model Excellence:** Build accurate, interpretable, and scalable ML models.
+- **MLFlow Versioning:** Utilize MLFlow for effective model versioning, ensuring traceability and reproducibility.
 
 ## Installation
 
@@ -95,7 +100,24 @@ In this repository, the branches are organized as follows:
   ```bash
   git checkout -b task-1
     ```
+### Branches
 
+In this repository, the branches are organized as follows:
+
+- **main:** The main branch
+    - Containing all working and updated branch pushes    
+
+- **task-1:** The branch for Day 1 analysis.
+    - **Dev Environment Setup:** Successfully set up the Python environment, Git version control, and CI/CD.
+    - **Relevant Skills Demonstration:** Showcase proficiency in the CRISP-DM framework, data understanding, EDA techniques, and statistical thinking.
+    - **Project Planning - EDA & Stats:** Effectively plan and execute the project using the CRISP-DM framework, perform EDA, and derive actionable insights from statistical analyses.
+
+- **task-2:** The current branch for Day 2 analysis. 
+    - 
+
+  ```bash
+  git checkout -b task-2
+    ```
 
 ### Code Organization
 
@@ -157,6 +179,21 @@ Restructured the code by moving functions into `/src/loader.py` and `/src/utils.
   - ***Top 10 Messages - Reactions***
     - *Scatter plot*
     ![Alt text](screenshots/2dscatterplot.png)
+
+- Earliest reporting sites for each event
+  - ***Earliest reporting sites for each event - Pubish Time***
+  *Event Distribution*
+  ![Alt text](screenshots/earlyreport.png)
+
+- Number of articles for each event:
+  - ***Number of articles for each event: - Topic Category***
+  *Topic Distribution*
+  ![Alt text](screenshots/no_of_articleperevent.png)
+
+- Correlatiob Between News Sites:
+  - ***Correlation: - Topic Correlation***
+  *Topic Distribution*
+  ![Alt text](screenshots/correlation.png)
 
 ## Contributing
 Contributions are welcome! Before contributing, please review our contribution guidelines.
