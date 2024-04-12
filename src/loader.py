@@ -8,7 +8,7 @@ import csv
 from datetime import datetime
 from pick import pick
 from time import sleep
-
+import pandas as pd
 
 
 # Create wrapper classes for using slack_sdk in place of slacker
@@ -34,36 +34,57 @@ class NewsDataLoader:
         path: path to the slack exported data folder
         '''
         self.path = path
-        self.news = self.get_news()
-        self.traffic = self.get_traffic()
-        self.domain_location = self.get_domain_location()
+        self.news = self.get_news_path()
+        self.traffic = self.get_traffic_path()
+        self.domain_location = self.get_domain_location_path()
     
 
-    def get_news(self):
+    def get_news_path(self):
         '''
-        write a function to get all the news from the csv file
+        write a function to get the news path
         '''
         news = os.path.join(self.path, 'rating.csv')
         
         return news
     
-    def get_traffic(self):
+    def get_traffic_path(self):
         '''
-        write a function to get all the traffic from the csv file
+        write a function to get the traffic path
         '''
         traffic = os.path.join(self.path, 'traffic.csv')
-
-        return traffic  
+        
+        return traffic
       
-    def get_domain_location(self):
+    def get_domain_location_path(self):
         '''
-        write a function to get all the domain_location from the csv file
+        write a function to get the domain_location path
+
         '''
         domain_location = os.path.join(self.path, 'domains_location.csv')
 
         return domain_location
 
 
+    def get_news_data(self):
+        '''
+        write a function to get all the news from the csv file
+        '''
+        
+        return pd.read_csv(self.get_news_path())
+    
+    def get_traffic_data(self):
+        '''
+        write a function to get all the traffic from the csv file
+        '''
+        
+        return pd.read_csv(self.get_traffic_path())
+      
+    def get_domain_location_data(self):
+        '''
+        write a function to get all the domain_location from the csv file
+        '''
+
+        return pd.read_csv(self.get_news_path())
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Export News history')
