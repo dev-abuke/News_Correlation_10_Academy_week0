@@ -23,6 +23,12 @@ This project focuses on leveraging Git and GitHub for version control, setting u
 - **Dev Environment Setup:** Successfully set up the Python environment, Git version control, and CI/CD.
 - **Relevant Skills Demonstration:** Showcase proficiency in the CRISP-DM framework, data understanding, EDA techniques, and statistical thinking.
 - **Project Planning - EDA & Stats:** Effectively plan and execute the project using the CRISP-DM framework, perform EDA, and derive actionable insights from statistical analyses.
+- **Topic Modeling** Model topics for categories and top words in those categories
+- **Sentiment Analysis** Analyse sentiment and sentiment score on title and article
+- **Correlation Analysis** Analyse correlation between each media outlets for similarity in content
+- **Database Design and Configuration** Design a database using dbdiagram.io and configure postgresql
+- **Frontend Development** Design and deploy frontend using React + Vue and Tailwind
+- **Backend Development** Design and deploy backend using flask python framework
 
 ## Installation
 
@@ -126,6 +132,7 @@ Restructured the code by moving functions into `/src/loader.py` and `/src/utils.
   ![Alt text](screenshots/asia.png)
   - ***Top and Bottom 10 Websites - USA***
   ![Alt text](screenshots/USA.png)
+
 #### Sentiment Analysis
 - Websites with the highest count of positive, neutral, and negative sentiment.
   ***Top and Bottom 10 Websites - Positive***
@@ -135,7 +142,7 @@ Restructured the code by moving functions into `/src/loader.py` and `/src/utils.
   ***Top and Bottom 10 Websites - Neutral***
   -![Alt text](screenshots/neutral_sentiment.png)
 
-### Top 
+### Topic Analysis
 
 - How similar are the number of words in the title  across sites
   - ***Top 10 Websites (Source) - Title Length***
@@ -146,6 +153,10 @@ Restructured the code by moving functions into `/src/loader.py` and `/src/utils.
   - ***The impact of frequent news reporting***
     - *Scatter plot*
     ![Alt text](screenshots/2dscatterplot.png)
+
+- Database schema design 
+  - ***Design Db***
+    ![Alt text](screenshots/db_schema_design.png)
 
 ## Contributing
 Contributions are welcome! Before contributing, please review our contribution guidelines.
