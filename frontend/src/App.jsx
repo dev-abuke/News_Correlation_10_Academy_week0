@@ -8,10 +8,10 @@ function App() {
         <Navbar />
         <div className="grid md:grid-cols-3 grid-cols-1 w-full">
           <div className="col-span-2">
-            <RightColumn />
+            <LeftColumn />
           </div>
           <div className="w-full">
-            <LeftColumn />
+            <RightColumn />
           </div>
         </div>
       </div>

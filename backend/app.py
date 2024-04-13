@@ -45,7 +45,7 @@ class articles(db.Model):
     sentiment_score = db.Column(db.Float, nullable=False)
 
     def __repr__(self):
-        return f"Channel_messages_ts: id={self.id}, channel_name={self.source}, text={self.sentiment_score}, timestamp_events={self.timestamp}"
+        return f"Channel_messages_ts: id={self.id}, channel_name={self.source}, text={self.sentiment_score}"
 
 class article_sentiment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -58,20 +58,20 @@ class article_sentiment(db.Model):
     def __repr__(self):
         return f"article_sentiment: id={self.id}, channel={self.title}, text={self.content}, sentiment_score={self.sentiment_score}, sentiment={self.sentiment_text}"
 
-@app.route('/article_stat', methods=['GET'])
-def get_channel_activity():
-    article_data = articles.query.all()
-    print("The article dataaaa: ", article_data)
-    article_list = []
+@app.route('/sentiment_stat', methods=['GET'])
+def get_sentiment():
+    
+    articles_db = articles.query.filter(articles.source.isnot(None)).all()
+    
+    sentiment_data = [(article.source, article.sentiment_score) for article in articles_db]
+    # Extract all sentiment scores
+    sentiment_scores = [score for _, score in sentiment_data]
+    # # Categorize scores
+    categories = ['Negative' if score < 0 else 'Positive' if score > 0 else 'Neutral' for score in sentiment_scores]
+    # # Count scores in each category
+    score_counts = Counter(categories)
 
-    for article in article_data:
-        article_list.append({
-            "category": f"Category {article.category}",
-            "title": article.title,  # Correct column name
-            "content": article.content  # Correct column name
-        })
-
-    return jsonify({'articles': article_list})
+    return jsonify({'sentiments': score_counts})
 
 
 @app.route('/top_sources', methods=['GET'])
@@ -92,18 +92,6 @@ def get_top_sources():
     average_scores = {source: {'average_score': sum(scores) / len(scores), 'count': len(scores)} for source, scores in source_dict.items()}
     # Sort the dictionary based on count in descending order and take the top 10
     top_10_sources = sorted(average_scores.items(), key=lambda x: x[1]['count'], reverse=True)[:10]
-
-    print("The Average Scoreeeee: ",top_10_sources)
-
-    # Extract text and channel_name from each message
-    # articles_data = [(article.source) for article in articles_db]
-
-    # # # Calculate the frequency of each unique article
-    # _freq = Counter(articles_data)
-
-    # top_sources = _freq.most_common(10)
-
-    # print("The Top of Tops: ", top_10_sources)
     top_sources_list = []
     for (source, avcnt) in top_10_sources:
         top_sources_list.append({

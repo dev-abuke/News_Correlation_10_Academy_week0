@@ -36,7 +36,7 @@ const TableCard = () => {
 
   return (
     <Card className="mt-4">
-      <Title>List of Top News Outlets</Title>
+      <Title>List of Top 10 News Outlets (10,000 Data Points)</Title>
       <Table className="mt-5">
         <TableHead>
           <TableRow>
