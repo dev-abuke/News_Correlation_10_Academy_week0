@@ -36,7 +36,7 @@ const TableCard = () => {
 
   return (
     <Card className="mt-4">
-      <Title>List of Top 10 News Outlets (10,000 Data Points)</Title>
+      <Title>List of Top 10 News Outlets</Title>
       <Table className="mt-5">
         <TableHead>
           <TableRow>
@@ -50,7 +50,7 @@ const TableCard = () => {
             // Check if the text is not empty or contains only spaces
             item.source.trim() !== "" && (
               <TableRow key={index}>
-                <TableCell>{truncateText(item.source)}</TableCell>
+                <TableCell>{item.source}</TableCell>
                 <TableCell>
                   <Text>{item.score}</Text>
                 </TableCell>

@@ -7,9 +7,10 @@ const AreaChartCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/articles");
+        const response = await fetch("http://127.0.0.1:5000/date_article");
         const data = await response.json();
-        setChartdata(data.articles);
+        console.log(data)
+        setChartdata(data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -23,15 +24,14 @@ const AreaChartCard = () => {
   };
 
   return (
-    <Card className="mt-4 bg-green-900">
+    <Card className="mt-4">
       <Title>News Publishing Over Time</Title>
       <AreaChart
         className="h-72 mt-4"
         data={chartdata}
         index="date"
-        categories={["all-community-building", "all-resources"]}
+        categories={["Article Count"]}
         colors={["indigo", "cyan"]}
-        valueFormatter={valueFormatter}
       />
     </Card>
   );

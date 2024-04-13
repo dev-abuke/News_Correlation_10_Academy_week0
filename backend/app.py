@@ -5,6 +5,8 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
+from sqlalchemy import cast, Date
+import time
 
 app = Flask(__name__) # where we initialzed our app
 # by default the flask run in production
@@ -42,7 +44,9 @@ with app.app_context():
 class articles(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     source = db.Column(db.String(50), nullable=False)
+    title = db.Column(db.String, nullable=False)
     sentiment_score = db.Column(db.Float, nullable=False)
+    date_published = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
         return f"Channel_messages_ts: id={self.id}, channel_name={self.source}, text={self.sentiment_score}"
@@ -101,6 +105,37 @@ def get_top_sources():
         })
 
     return jsonify({'top_channel_messages': top_sources_list})
+
+
+@app.route('/date_article', methods=['GET'])
+def get_date():
+    # Retrieve the text column and channel_name from the database
+
+    with app.app_context():
+        # Group by publish date and count the number of articles
+        result = db.session.query(cast(articles.date_published, Date), func.count(articles.title)).group_by(cast(articles.date_published, Date)).all()
+
+    # Convert result to a dictionary
+    # Convert result to a dictionary
+    # Convert result to a dictionary
+    data = {int(time.mktime(date.timetuple())): count for date, count in result}
+
+    # Now you can send `data` as JSON
+    print("the dataaa :", data)
+    # iterate throught the data
+    dt = []
+    for key, value in data.items():
+        # Convert the timestamp to an integer
+        timestamp = int(key)
+
+        # Convert the timestamp to a datetime object
+        date = datetime.fromtimestamp(timestamp)
+
+        # Extract the date in the format 'Jan 23'
+        formatted_date = date.strftime('%b %d')
+        dt.append({'date': formatted_date, 'articles': value})
+
+    return jsonify({'data': dt})
 
 if __name__ == '__main__':
     app.run()

@@ -10,7 +10,7 @@ export default function PieSentiment(da) {
         labels: ['Positive', 'Neutral', 'Negative'],
         datasets: [
           {
-            label: '# of Votes',
+            label: 'Number of Articles by Sentiment',
             data: [topMessages.Positive,topMessages.Neutral,topMessages.Negative],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
