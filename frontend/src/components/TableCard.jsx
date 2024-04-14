@@ -46,20 +46,29 @@ const TableCard = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {topMessages.map((item, index) => (
-            // Check if the text is not empty or contains only spaces
-            item.source.trim() !== "" && (
-              <TableRow key={index}>
-                <TableCell>{item.source}</TableCell>
-                <TableCell>
-                  <Text>{item.score}</Text>
-                </TableCell>
-                <TableCell>
-                  <Badge color="emerald">{item.count}</Badge>
-                </TableCell>
-              </TableRow>
-            )
-          ))}
+          {topMessages.map(
+            (item, index) =>
+              // Check if the text is not empty or contains only spaces
+              item.source.trim() !== "" && (
+                <TableRow key={index}>
+                  <TableCell>{item.source}</TableCell>
+                  <TableCell>
+                    {item.score >= 0 ? (
+                      item.score == 0 ? (
+                        <Badge>{item.score.toFixed(3)} : Neutral</Badge>
+                      ) : (
+                        <Badge>{item.score.toFixed(3)} : Positive</Badge>
+                      )
+                    ) : (
+                      <Badge>{item.score.toFixed(3)} : Negative</Badge>
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    <Badge>{item.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Badge>
+                  </TableCell>
+                </TableRow>
+              )
+          )}
         </TableBody>
       </Table>
     </Card>
