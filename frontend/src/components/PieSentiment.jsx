@@ -1,45 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import React, { useState, useEffect } from "react";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
+import { Card } from "@tremor/react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function PieSentiment(da) {
-    const [topMessages, setTopMessages] = useState([]);
-    const data = {
-        labels: ['Positive', 'Neutral', 'Negative'],
-        datasets: [
-          {
-            label: 'Number of Articles by Sentiment',
-            data: [topMessages.Positive,topMessages.Neutral,topMessages.Negative],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
-            ],
-            borderWidth: 1,
-          },
+  const [topMessages, setTopMessages] = useState([]);
+  const data = {
+    labels: ["Positive", "Neutral", "Negative"],
+    datasets: [
+      {
+        label: "Number of Articles by Sentiment",
+        data: [topMessages.Positive, topMessages.Neutral, topMessages.Negative],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
         ],
-      };
-    useEffect(() => {
-      // Fetch data from the API endpoint
-      fetch("http://127.0.0.1:5000/sentiment_stat")
-        .then((response) => response.json())
-        .then((data) => setTopMessages(data.sentiments))
-        .catch((error) => console.error("Error fetching data:", error));
-    }, []);
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+  useEffect(() => {
+    // Fetch data from the API endpoint
+    fetch("http://127.0.0.1:5000/sentiment_stat")
+      .then((response) => response.json())
+      .then((data) => setTopMessages(data.sentiments))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
-
-  return <Pie data={data} />;
+  return (
+    <Card className="mt-4 align-middle">
+      <Pie className="align-middle" data={data} />
+    </Card>
+  );
 }
