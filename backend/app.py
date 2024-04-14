@@ -123,6 +123,7 @@ def get_date():
     # Now you can send `data` as JSON
     print("the dataaa :", data)
     # iterate throught the data
+    sum = 0
     dt = []
     for key, value in data.items():
         # Convert the timestamp to an integer
@@ -130,11 +131,13 @@ def get_date():
 
         # Convert the timestamp to a datetime object
         date = datetime.fromtimestamp(timestamp)
-
+        sum = sum + value
         # Extract the date in the format 'Jan 23'
         formatted_date = date.strftime('%b %d')
         dt.append({'date': formatted_date, 'articles': value})
 
+    print("the sum of articles in the back is: ", sum)
+    
     return jsonify({'data': dt})
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Title, AreaChart, LineChart } from "@tremor/react";
+import { Card, Title, AreaChart, LineChart, BarChart } from "@tremor/react";
 import { Line } from "react-chartjs-2";
 
 const AreaChartCard = () => {
@@ -16,12 +16,14 @@ const AreaChartCard = () => {
         
         // If you need to push the sorted objects into a new array
         const sortedDataArray = [];
+        let sum = 0;
         sortedData.forEach(item => {
+          sum = sum + item.articles
           sortedDataArray.push(item);
         });
         
         // 'sortedDataArray' now contains the sorted objects by date
-        console.log(sortedDataArray);
+        console.log("The sum of articles are: ", sum);
         // console.log("sorted data : ", sortedData)
         setChartdata(sortedDataArray);
       } catch (error) {
@@ -51,14 +53,14 @@ const AreaChartCard = () => {
   return (
     <Card className="mt-4">
       <Title>News Publishing Over Time</Title>
-      <AreaChart
+      <BarChart
       tickGap={1}
         className="h-72 mt-4"
         data={chartdata}
         yAxisWidth={65}
         index="date"
         categories={["articles"]}
-        colors={['indigo', 'cyan']}
+        colors={['blue', 'teal', 'amber', 'rose', 'indigo', 'emerald']}
       />
     </Card>
   );
